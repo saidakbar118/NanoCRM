@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -9,59 +10,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!-- educate icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/educate-custon-icon.css">
+    <link rel="stylesheet" href="{% static 'css/educate-custon-icon.css' %}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{% static 'css/morrisjs/morris.css' %}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{% static 'css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu-vertical.css' %}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{% static 'css/calendar/fullcalendar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar/fullcalendar.print.min.css' %}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
 </head>
 
 <body>
@@ -72,8 +72,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
+                <a href="index.html"><img class="main-logo" src="{% static 'img/logo/logo.png' %}" alt="" /></a>
+                <strong><a href="index.html"><img src="{% static 'img/logo/logosn.png' %}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -223,7 +223,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="{% static 'img/logo/logo.png' %}" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/1.jpg" alt="">
+                                                                        <img src="{% static 'img/contact/1.jpg' %}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -290,7 +290,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/4.jpg" alt="">
+                                                                        <img src="{% static 'img/contact/4.jpg' %}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -302,7 +302,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/3.jpg" alt="">
+                                                                        <img src="{% static 'img/contact/3.jpg' %}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -314,7 +314,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/2.jpg" alt="">
+                                                                        <img src="{% static 'img/contact/2.jpg' %}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -391,7 +391,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="img/product/pro4.jpg" alt="" />
+															<img src="{% static 'img/product/pro4.jpg' %}" alt="" />
 															<span class="admin-name">Prof.Anderson</span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
@@ -433,7 +433,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/4.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -446,7 +446,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -459,7 +459,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -472,7 +472,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/3.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -485,7 +485,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/4.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -498,7 +498,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -511,7 +511,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -524,7 +524,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -537,7 +537,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -550,7 +550,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
+                                                                                            <img src="{% static 'img/contact/3.jpg' %}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -1078,7 +1078,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="latest-blog-single blog-single-full-view">
                                         <div class="blog-image">
-                                            <a href="#"><img src="img/blog-details/1.jpg" alt="" />
+                                            <a href="#"><img src="{% static 'img/blog-details/1.jpg' %}" alt="" />
 												</a>
                                             <div class="blog-date">
                                                 <p><span class="blog-day">20</span> May</p>
@@ -1109,7 +1109,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="user-comment">
-                                        <img src="img/contact/1.jpg" alt="" />
+                                        <img src="{% static 'img/contact/1.jpg' %}" alt="" />
                                         <div class="comment-details">
                                             <h4>Jonathan Doe 2015 15 July <span class="comment-replay">Replay</span></h4>
                                             <p>Shabby chic selfies pickled Tumblr letterpress iPhone. Wolf vegan retro selvage literally <span class="mobile-sm-d-n">Wes Anderson ethical four loko. Meggings blog chambray tofu pour-over. Pour-over Tumblr keffiyeh, cornhole whatever cardigan Tonx lomo.Shabby.</span></p>
@@ -1120,7 +1120,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="user-comment admin-comment">
-                                        <img src="img/contact/2.jpg" alt="" />
+                                        <img src="{% static 'img/contact/2.jpg' %}" alt="" />
                                         <div class="comment-details">
                                             <h4>Jonathan Doe 2015 15 July <span class="comment-replay">Replay</span></h4>
                                             <p>Shabby chic selfies pickled Tumblr letterpress iPhone. Wolf vegan retro selvage literally <span class="mobile-sm-d-n">Wes Anderson ethical four loko. Meggings blog chambray tofu pour-over. Pour-over Tumblr keffiyeh, cornhole whatever cardigan
@@ -1132,7 +1132,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="user-comment user-coment2">
-                                        <img src="img/contact/3.jpg" alt="" />
+                                        <img src="{% static 'img/contact/3.jpg' %}" alt="" />
                                         <div class="comment-details">
                                             <h4>Jonathan Doe 2015 15 July <span class="comment-replay">Replay</span></h4>
                                             <p>Shabby chic selfies pickled Tumblr letterpress iPhone. Wolf vegan retro selvage literally Wes Anderson <span class="mobile-sm-d-n">ethical four loko. Meggings blog chambray tofu pour-over. Pour-over Tumblr keffiyeh, cornhole whatever cardigan Tonx lomo.Shabby.</span></p>
@@ -1191,70 +1191,70 @@
 
     <!-- jquery
 		============================================ -->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="js/wow.min.js"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
+    <script src="{% static 'js/jquery-price-slider.js' %}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="js/jquery.meanmenu.js"></script>
+    <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="js/jquery.sticky.js"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="{% static 'js/scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/scrollbar/mCustomScrollbar-active.js' %}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="js/metisMenu/metisMenu.min.js"></script>
-    <script src="js/metisMenu/metisMenu-active.js"></script>
+    <script src="{% static 'js/metisMenu/metisMenu.min.js' %}"></script>
+    <script src="{% static 'js/metisMenu/metisMenu-active.js' %}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
+    <script src="{% static 'js/sparkline/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'js/sparkline/jquery.charts-sparkline.js' %}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="js/calendar/moment.min.js"></script>
-    <script src="js/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
+    <script src="{% static 'js/calendar/moment.min.js' %}"></script>
+    <script src="{% static 'js/calendar/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'js/calendar/fullcalendar-active.js' %}"></script>
     <!-- maskedinput JS
 		============================================ -->
-    <script src="js/jquery.maskedinput.min.js"></script>
-    <script src="js/masking-active.js"></script>
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'js/masking-active.js' %}"></script>
     <!-- datepicker JS
 		============================================ -->
-    <script src="js/datepicker/jquery-ui.min.js"></script>
-    <script src="js/datepicker/datepicker-active.js"></script>
+    <script src="{% static 'js/datepicker/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/datepicker/datepicker-active.js' %}"></script>
     <!-- form validate JS
 		============================================ -->
-    <script src="js/form-validation/jquery.form.min.js"></script>
-    <script src="js/form-validation/jquery.validate.min.js"></script>
-    <script src="js/form-validation/form-active.js"></script>
+    <script src="{% static 'js/form-validation/jquery.form.min.js' %}"></script>
+    <script src="{% static 'js/form-validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/form-validation/form-active.js' %}"></script>
     <!-- tab JS
 		============================================ -->
-    <script src="js/tab.js"></script>
+    <script src="{% static 'js/tab.js' %}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="js/plugins.js"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <script src="{% static 'js/tawk-chat.js' %}"></script>
 </body>
 
 </html>
