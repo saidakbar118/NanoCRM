@@ -819,11 +819,11 @@ ul.setting-panel-list li{
     background: #e12503;
 }
 .breadcome-list {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: #fff;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    /* background: #fff; */
+    /* padding-left: 200px !important; */
+    /* padding-right: 20px; */
     margin-bottom: 30px;
     margin-top: 20px;
 }
@@ -855,6 +855,7 @@ ul.setting-panel-list li{
     color: #303030;
     padding-left: 20px;
     padding-right: 40px;
+    margin-left: 200px !important;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: none;
     border-radius: 30px;
