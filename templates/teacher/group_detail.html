@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ group.name }} guruhi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      word-wrap: break-word;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .info {
+      margin-bottom: 20px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .info p {
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #f9fafb;
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      word-break: break-word;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      background-color: #2563eb;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-size: 14px;
+    }
+
+    .back-button:hover {
+      background-color: #1d4ed8;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .back-button {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+
+      li {
+        padding: 8px 12px;
+      }
+
+      .info p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="/teacher/groups/" class="back-button">← Ortga</a>
+
+<div class="container">
+  <h2>{{ group.name }} guruhi</h2>
+
+  <div class="info">
+    <p><strong>Yo‘nalish:</strong> {{ group.department|default:"- Yo‘nalish belgilanmagan -" }}</p>
+    <p><strong>Vaqti:</strong> {{ group.time }}</p>
+    <p><strong>Kuni:</strong> {{ group.days }}</p>
+    {% if group.description %}
+      <p><strong>Izoh:</strong> {{ group.description }}</p>
+    {% endif %}
+  </div>
+
+  <h3>O‘quvchilar:</h3>
+  <ul>
+    {% for student in students %}
+      <li>{{ student.full_name }}</li>
+    {% empty %}
+      <li>Hozircha o‘quvchilar mavjud emas.</li>
+    {% endfor %}
+  </ul>
+
+</div>
+
+</body>
+</html>

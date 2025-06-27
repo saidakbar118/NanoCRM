@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crm Nano</title>
+    <link rel="stylesheet" href="{% static 'attendace.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <a href="/groups/" class="back-btn" style="color: #fff;"><i class="fas fa-arrow-left"></i></a>
+  <h2>
+    {{ course.name }} -
+    {{ today.day }}
+    {% with month=today.month %}
+      {% if month == 1 %}yanvar
+      {% elif month == 2 %}fevral
+      {% elif month == 3 %}mart
+      {% elif month == 4 %}aprel
+      {% elif month == 5 %}may
+      {% elif month == 6 %}iyun
+      {% elif month == 7 %}iyul
+      {% elif month == 8 %}avgust
+      {% elif month == 9 %}sentabr
+      {% elif month == 10 %}oktabr
+      {% elif month == 11 %}noyabr
+      {% elif month == 12 %}dekabr
+      {% endif %}
+    {% endwith %}
+    {{ today.year }}
+  </h2>  
+<form method="POST">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <th>O‘quvchi</th>
+      <th>Bor</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.full_name }}</td>
+      <td><input type="checkbox" name="attend_{{ student.id }}" checked></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button type="submit">Davomatni Saqlash</button>
+</form>
+
+</body>
+</html>

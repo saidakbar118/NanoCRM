@@ -1,0 +1,159 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="uz">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ month_name }} {{ year }} - Davomat Jurnali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-header: #e2e8f0;
+      --bg-paid: #d1fae5;
+      --bg-unpaid: #fee2e2;
+      --text-paid: #065f46;
+      --text-unpaid: #991b1b;
+      --border-color: #d1d5db;
+      --main-color: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color:#1d0f3c;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 22px;
+      transition: background 0.3s;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: white;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      background-color: rgba(29, 15, 60, 0.6);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      border: white;
+      padding: 10px 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(29, 15, 60, 0.6);
+      font-weight: 600;
+    }
+
+    td {
+      background-color: rgba(29, 15, 60, 0.6);
+    }
+
+    .paid {
+      background-color: rgba(29, 15, 60, 0.6);
+      color: green;
+      font-weight: bold;
+    }
+
+    .unpaid {
+      background-color: rgba(29, 15, 60, 0.6);
+      color: red;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      th, td {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      .back-button {
+        font-size: 13px;
+        padding: 7px 12px;
+      }
+
+      .table-container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:history.back()" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+<h2>{{ month_name }} {{ year }} - Davomat va To‘lov Jurnali</h2>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>O‘quvchi</th>
+        {% for day_obj, day_str in date_list %}
+          <th>{{ day_obj.day }}</th>
+        {% endfor %}
+        <th>To‘lov</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+        <tr>
+          <td>{{ student.full_name }}</td>
+          {% for day_obj, day_str in date_list %}
+            {% with key=student.id|stringformat:"s"|add:"_"|add:day_str %}
+              {% if attendance|get_item:key %}
+                <td>✔</td>
+              {% else %}
+                <td>—</td>
+              {% endif %}
+            {% endwith %}
+          {% endfor %}
+          {% if payments|get_item:student.id %}
+            <td class="paid">To‘langan</td>
+          {% else %}
+            <td class="unpaid">To‘lanmagan</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

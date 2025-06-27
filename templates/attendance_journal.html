@@ -1,0 +1,66 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ month_name }} {{ year }} - Davomat Jurnali</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+        font-size: 14px;
+      }
+      th {
+        background-color: #f0f0f0;
+      }
+      .paid {
+        background-color: #d1fae5;
+        color: green;
+      }
+      .unpaid {
+        background-color: #fee2e2;
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <h2>{{ month_name }} {{ year }} - Davomat va To‘lov Jurnali</h2>
+    <table>
+        <thead>
+            <tr>
+              <th>O‘quvchi</th>
+              {% for day_obj, day_str in date_list %}
+                <th>{{ day_obj.day }}</th>
+              {% endfor %}
+              <th>To‘lov</th>
+            </tr>
+        </thead>
+      <tbody>
+        {% for student in students %}
+          <tr>
+            <td>{{ student.full_name }}</td>
+            {% for day_obj, day_str in date_list %}
+              {% with key=student.id|stringformat:"s"|add:"_"|add:day_str %}
+                {% if attendance|get_item:key %}
+                  <td>✔</td>
+                {% else %}
+                  <td>—</td>
+                {% endif %}
+              {% endwith %}
+            {% endfor %}
+            {% if payments|get_item:student.id %}
+              <td class="paid">To‘langan</td>
+            {% else %}
+              <td class="unpaid">To‘lanmagan</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</body>
+</html>

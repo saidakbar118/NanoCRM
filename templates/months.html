@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>>
+<body style="background-color: #1d0f3c;;">
+  {% load custom_tags %}
+  <h2>{{ course.name }} — Oy tanlang</h2>
+  <ul>
+    {% for month in 1|to_range:12 %}
+      <li>
+        <a href="{% url 'attendance_journal' course.id 2025 month %}">
+          {{ month|get_month_name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

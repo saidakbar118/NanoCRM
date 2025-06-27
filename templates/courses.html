@@ -1,0 +1,6 @@
+<h2>Kurslar ro‘yhati</h2>
+<ul>
+  {% for course in courses %}
+    <li><a href="{% url 'select_month' course.id %}">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>

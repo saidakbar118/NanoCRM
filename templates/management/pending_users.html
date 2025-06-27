@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasdiq kutayotgan foydalanuvchilar</title>
+
+  <!-- Font Awesome ikonlar uchun -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color:#1d0f3c;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container-table {
+      width: 90%;
+      max-width: 1100px;
+      background-color: rgba(29, 15, 60, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      padding: 30px;
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 22px;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button i {
+      margin-right: 6px;
+    }
+
+    .container-table .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .container-table .header h2 {
+      margin: 0;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: rgba(29, 15, 60, 0.6);
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 16px;
+      color: #fff;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    th{
+      color: yellow;
+    }
+
+
+    .actions a {
+      margin-right: 10px;
+      color: green;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .actions a.delete {
+      color: red;
+    }
+
+    .actions a:hover {
+      color: rgb(3, 181, 3);
+    }
+
+    .actions a.delete:hover {
+      color: #d32f2f;
+    }
+
+    @media (max-width: 768px) {
+      .container-table {
+        padding: 20px 10px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 10px 8px;
+      }
+
+      .actions a {
+        font-size: 16px;
+      }
+
+      .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-table">
+
+    <!-- ⬅️ Ortga qaytish tugmasi -->
+    <a href="/" class="back-button">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="header">
+      <h2>Tasdiq kutayotgan foydalanuvchilar</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>F.I.O</th>
+          <th>Tel</th>
+          <th>Amallar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in pending_users %}
+          <tr>
+            <td>{{ user.full_name }}</td>
+            <td>{{ user.phone_number }}</td>
+            <td class="actions">
+              <a href="{% url 'approve_user' user.id %}" title="Tasdiqlash">
+                <i class="fas fa-check-circle"></i>
+              </a>
+              <a href="{% url 'reject_user' user.id %}" class="delete" title="O‘chirish">
+                <i class="fas fa-trash-alt"></i>
+              </a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3">Hozircha tasdiq kutayotgan foydalanuvchi yo‘q.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

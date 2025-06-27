@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davomat va To‘lov Holati</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(to right, #f9f9f9, #eef2f7);
+        }
+
+        .status-true {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-false {
+            color: red;
+            font-weight: bold;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2c80b4;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px 10px;
+                padding: 20px 15px;
+                border-radius: 10px;
+            }
+
+            th, td {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .back-button {
+                font-size: 12px;
+                padding: 6px 12px;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="/student-dashboard/ " class="back-button">⬅ Ortga</a>
+
+<div class="container">
+    <h3>📅 Davomat jurnali (oxirgi 30 kun)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Sana</th>
+                <th>Holat</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in attendance %}
+            <tr>
+                <td>{{ record.date }}</td>
+                <td class="{% if record.status %}status-true{% else %}status-false{% endif %}">
+                    {% if record.status %}
+                        ✅ Kelgan
+                    {% else %}
+                        ❌ Kelmagan
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>💰 To‘lovlar jurnali (oxirgi 12 oy)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Oy</th>
+                <th>Holat</th>
+                <th>Miqdori</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pay in payments %}
+            <tr>
+                <td>{{ pay.month }}</td>
+                <td class="{% if pay.is_paid %}status-true{% else %}status-false{% endif %}">
+                    {% if pay.is_paid %}
+                        ✅ To‘langan
+                    {% else %}
+                        ❌ To‘lanmagan
+                    {% endif %}
+                </td>
+                <td>{{ pay.amount }} so‘m</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">To‘lovlar topilmadi</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

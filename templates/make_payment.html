@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To‘lov</title>
+    <link rel="stylesheet" href="{% static 'make_payment.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Orqaga
+        </a>
+
+        <h2>To‘lov — {{ student.full_name }}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Oy nomi:</label>
+            <input type="text" name="month" required>
+
+            <label>To‘lov summasi:</label>
+            <input type="number" name="amount" required>
+
+            <button type="submit">Saqlash</button>
+        </form>
+    </div>
+</body>
+</html>

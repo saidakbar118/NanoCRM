@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Xabarlar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .notification {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .notification p {
+            margin: 5px 0;
+        }
+
+        .unread {
+            font-weight: bold;
+        }
+
+        .actions a {
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .read-btn { color: green; }
+        .delete-btn { color: crimson; }
+
+        .back {
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        @media(max-width: 600px){
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/student-dashboard/" class="back">← Ortga</a>
+    <h2>🔔 Sizga yuborilgan xabarlar</h2>
+
+    {% if notifications %}
+        {% for notif in notifications %}
+        <div class="notification {% if not notif.is_read %}unread{% endif %}">
+            <p>{{ notif.message }}</p>
+            <small>{{ notif.created_at|date:"d-m-Y H:i" }}</small>
+            <div class="actions">
+                {% if not notif.is_read %}
+                    <a href="{% url 'mark_notification_read' notif.id %}" class="read-btn">O'qildi</a>
+                {% endif %}
+                <a href="{% url 'delete_notification' notif.id %}" class="delete-btn">O'chirish</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Xabarlar topilmadi.</p>
+    {% endif %}
+</div>
+</body>
+</html>

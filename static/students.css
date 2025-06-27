@@ -1,0 +1,128 @@
+/* Umumiy sozlamalar */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background:#1d0f3c;
+    margin: 0;
+}
+
+/* Jadval konteyneri */
+.table-container {
+    background-color: rgba(29, 15, 60, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-width: 1000px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+/* Sarlavha */
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Jadval asosiy stillari */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    font-size: 15px;
+    text-align: left;
+}
+
+th {
+    background: #0008ff;
+    color: white;
+}
+
+tr{
+    background-color: rgba(29, 15, 60, 0.6);    
+    color: white;
+}
+
+
+
+/* To‘lov tugmasi */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 6px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.btn-tolov {
+    background: linear-gradient(135deg, #0d00ff, #bb00ff);
+}
+
+
+/* Orqaga tugmasi */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: white !important;
+    text-decoration: none;
+    font-size: 30px;
+    background-color: rgba(29, 15, 60, 0.6);
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.back-btn i {
+    font-size: 18px;
+}
+
+
+/* Kichik ekranlar uchun */
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .back-btn {
+        font-size: 22px;
+        padding: 6px 14px;
+        border-radius: 6px;
+    }
+
+    .back-btn i {
+        font-size: 13px;
+    }
+
+    table {
+        min-width: 100%;
+    }
+    .table-container{
+        padding: 10px !important;
+    }
+}
+@media screen and (max-width: 500px) {
+    .otmen {
+        display: none;
+    }
+}
+

@@ -1,0 +1,111 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="uz">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ course.name }} — Oy tanlang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --main-color: #1330c2;
+      --hover-color: #1a0f6e;
+      --background: #white;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1d0f3c;;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: white !important;
+      text-decoration: none;
+      font-size: 30px;
+      background-color: rgba(29, 15, 60, 0.6);
+      padding: 10px 30px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+  }
+
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .month-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .month-grid a {
+      display: block;
+      padding: 16px;
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .month-grid a:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 500px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      .back-button {
+        font-size: 22px;
+        padding: 8px 14px;
+      }
+
+      .month-grid a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="javascript:history.back()" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <div class="container">
+  <h2>{{ course.name }} — Oy tanlang</h2>
+
+  <div class="month-grid">
+    {% for month in 1|to_range:12 %}
+      <a href="{% url 'attendance_journal' course.id 2025 month %}">
+        {{ month|get_month_name }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+</body>
+</html>

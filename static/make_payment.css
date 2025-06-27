@@ -1,0 +1,116 @@
+/* Umumiy sozlamalar */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background:#1d0f3c;
+    margin: 0;
+}
+
+/* Formani o'rab turuvchi blok */
+.form-container {
+    background-color: rgba(29, 15, 60, 0.6);
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Sarlavha */
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Label va inputlar */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #fff;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9fafb;
+    transition: border 0.3s ease;
+}
+
+form input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Tugma */
+button[type="submit"] {
+    background: linear-gradient(135deg, #8600ff, #bb00ff);
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #059669;
+}
+
+/* Orqaga tugmasi */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgba(29, 15, 60, 0.6);
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+
+.back-btn i {
+    font-size: 16px;
+}
+
+
+/* Telefonlar uchun */
+@media screen and (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    form input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .back-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .back-btn i {
+        font-size: 13px;
+    }
+}

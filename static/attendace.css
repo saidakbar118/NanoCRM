@@ -1,0 +1,127 @@
+/* Umumiy sozlamalar */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background:linear-gradient(135deg, #1d0f3c, #0b0b50);
+    margin: 0;
+    padding: 10px;
+}
+
+/* Jadval konteyneri */
+.table-container {
+    background-color: rgba(29, 15, 60, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+/* Sarlavha */
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Jadval asosiy stillari */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    font-size: 15px;
+    text-align: left;
+    color: white;
+}
+
+th {
+    background-color: #090741;
+    color: yellow;
+}
+
+tr {
+    background-color: rgba(29, 15, 60, 0.6);
+}
+
+
+
+/* Checkboxni markazlashtirish */
+td input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Saqlash tugmasi */
+button[type="submit"] {
+    background: linear-gradient(135deg, #8600ff, #bb00ff);
+    color: white;
+    padding: 10px 24px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #059669;
+}
+
+/* RESPONSIV: Telefonlar uchun */
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    td input[type="checkbox"] {
+        transform: scale(1.1);
+    }
+
+    button[type="submit"] {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+}
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgba(29, 15, 60, 0.6);
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.back-btn i {
+    font-size: 22px;
+}
+
+
+
+/* Kichik ekranlar uchun */
+@media screen and (max-width: 500px) {
+    .back-btn {
+        font-size: 13px;
+        padding: 6px 14px;
+        border-radius: 6px;
+    }
+
+    .back-btn i {
+        font-size: 13px;
+    }
+}
+    

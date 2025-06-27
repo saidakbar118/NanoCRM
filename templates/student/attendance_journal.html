@@ -1,0 +1,162 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ month_name }} {{ year }} - Mening Davomatim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-card: #ffffff;
+      --bg-header: #f1f5f9;
+      --bg-paid: #d1fae5;
+      --bg-unpaid: #fee2e2;
+      --text-paid: #047857;
+      --text-unpaid: #b91c1c;
+      --main-color: #2563eb;
+      --border-color: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-light);
+      padding: 24px;
+      color: #111827;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 24px;
+      background-color: var(--main-color);
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #1e40af;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      font-size: 24px;
+    }
+
+    .journal-container {
+      max-width: 500px;
+      background-color: var(--bg-card);
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: var(--bg-header);
+      padding: 16px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .value {
+      font-weight: 600;
+    }
+
+    .present {
+      color: green;
+    }
+
+    .absent {
+      color: red;
+    }
+
+    .paid-box {
+      background-color: var(--bg-paid);
+      color: var(--text-paid);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .unpaid-box {
+      background-color: var(--bg-unpaid);
+      color: var(--text-unpaid);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .journal-container {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<a href="/student-dashboard/" class="back-button">← Ortga</a>
+
+<h2>{{ month_name }} {{ year }} - Mening Davomatim</h2>
+
+<div class="journal-container">
+  <div class="header">{{ student.full_name }}</div>
+
+  {% for day_obj, day_str in date_list %}
+    <div class="row">
+      <div class="label">{{ day_obj.day }} {{ month_name }}</div>
+      <div class="value">
+        {% with key=student.id|stringformat:"s"|add:"_"|add:day_str %}
+          {% if attendance|get_item:key %}
+            <span class="present">✔ Qatnashgan</span>
+          {% else %}
+            <span class="absent">— Qatnashmagan</span>
+          {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="row">
+    <div class="label">To‘lov Holati</div>
+    <div class="value">
+      {% if payments|get_item:student.id %}
+        <span class="paid-box">To‘langan</span>
+      {% else %}
+        <span class="unpaid-box">To‘lanmagan</span>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

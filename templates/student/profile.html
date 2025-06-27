@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilni tahrirlash</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f6f8fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1a252f;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 18px;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #1a252f;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .back-button {
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="/student-dashboard/" class="back-button">Ortga</a>
+
+<div class="container">
+    <h2>Shaxsiy ma'lumotlarni tahrirlash</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="id_first_name">Ism</label>
+        {{ form.full_name }}
+    
+        <label for="id_email">Tel</label>
+        {{ form.phone_number }}
+    
+        <label for="id_birth_date">Tug‘ilgan sana</label>
+        {{ form.birth_date }}
+    
+        <label for="id_bio">Qo‘shimcha ma’lumot</label>
+        {{ form.description }}
+
+        <label for="id_profile_picture">Profil rasmi</label>
+        {{ form.profile_pic }}
+    
+        <button type="submit">Saqlash</button>
+    </form>    
+</div>
+
+</body>
+</html>

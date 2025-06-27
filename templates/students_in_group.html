@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ course.name }} — O‘quvchilar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'students.css' %}">
+</head>
+<body>
+    <div class="table-container">
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Orqaga
+        </a>
+        <h2>{{ course.name }} — O‘quvchilar</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>F.I.Sh</th>
+                    <th class="otmen">Telefon</th>
+                    <th>Guruh</th>
+                    <th>To‘lov</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.full_name }}</td>
+                       
+                      <td class="otmen">{{ student.phone_number }}</td>
+                    <td>{{ student.group }}</td>
+                    <td>
+                        <a class="btn btn-tolov" href="{% url 'make_payment' student.id %}">
+                            <i class="fas fa-coins"></i> To‘lov
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
